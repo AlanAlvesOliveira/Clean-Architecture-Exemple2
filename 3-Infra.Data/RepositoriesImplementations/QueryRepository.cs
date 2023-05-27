@@ -17,6 +17,7 @@ namespace _3_Infra.Data.Repositories
     {
         protected readonly DbSet<TEntity> _DbSet;
 
+
         public QueryRepository(TContext dbSet)
         {
             _DbSet = dbSet.Set<TEntity>();

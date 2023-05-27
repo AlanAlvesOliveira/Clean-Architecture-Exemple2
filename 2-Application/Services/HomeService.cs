@@ -9,15 +9,18 @@ namespace _2_Application.Services
     {
         private readonly IQueryRepository<TableExample> _TableExampleRepo;
         private readonly ICommandRepository<TableExample> _TableExampleCommand;
+        private readonly IProcedureRepository<TableExample> _ProcTableExample;
 
-        public HomeService(IQueryRepository<TableExample> tableExampleRepo, ICommandRepository<TableExample> tableExampleCommand)
+        public HomeService(IQueryRepository<TableExample> tableExampleRepo, ICommandRepository<TableExample> tableExampleCommand, IProcedureRepository<TableExample> procTableExample)
         {
             _TableExampleRepo = tableExampleRepo;
             _TableExampleCommand = tableExampleCommand;
+            _ProcTableExample = procTableExample;
         }
 
         public HomeViewModels GetListaTableExample()
         {
+            var teste = _ProcTableExample.GetList(null);
             //_TableExampleCommand.Add(new TableExample() { Campo1 = "TesteTeste" });
             //var teste = _TableExampleCommand.Find(7);
             //teste.Campo1 = "Teste7";
