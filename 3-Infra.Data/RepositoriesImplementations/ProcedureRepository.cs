@@ -6,7 +6,7 @@ namespace _3_Infra.Data.Repositories
     {
         public IList<TEntity> GetList<TEntity>(Dictionary<string, object> filtro) where TEntity : class
         {
-            //TODO implementar
+            
             return null;
         }
     }

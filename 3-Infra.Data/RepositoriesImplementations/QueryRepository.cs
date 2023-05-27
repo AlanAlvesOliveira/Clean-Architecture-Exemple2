@@ -11,7 +11,9 @@ namespace _3_Infra.Data.Repositories
 {
     //TODO neste caso a implementação de query usa um TContext, porem a interface não, isso é correto? essa implentação não deveria vir tudo da interface
     //TODO tem também a questão do nulavel que eu desative para este projeto.
-    public class QueryRepository<TEntity, TContext> : IQueryRepository<TEntity> where TEntity : class where TContext : DbContext
+    public class QueryRepository<TEntity, TContext> : IQueryRepository<TEntity> 
+        where TEntity : class 
+        where TContext : DbContext
     {
         protected readonly DbSet<TEntity> _DbSet;
 
@@ -26,12 +28,12 @@ namespace _3_Infra.Data.Repositories
         }
          
         public  IList<TEntity> ToListAsNoTracking()
-        {
+        {            
             return _DbSet.AsNoTracking().ToList();
         }
 
         public IList<TEntity> WhereAsNoTracking(Expression<Func<TEntity, bool>> predicate)
-        {
+        {            
             return _DbSet.AsNoTracking().Where(predicate).ToList();
         }
     }

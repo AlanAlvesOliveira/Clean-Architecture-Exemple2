@@ -10,7 +10,6 @@ using System.Threading.Tasks;
 namespace _3_Infra.Data.Repositories
 {
     public class CommandRepository<TEntity, TContext> : ICommandRepository<TEntity>
-
         where TEntity : class
         where TContext : DbContext        
 
@@ -27,18 +26,18 @@ namespace _3_Infra.Data.Repositories
         public void Add(TEntity entity)
         {
             _DbSet.Add(entity);
-            SaveChanges();
+            _Context.SaveChanges();
         }
 
         public void AddRange(IEnumerable<TEntity> list)
         {
-            _DbSet.AddRange(list);
-            SaveChanges();
+            _DbSet.AddRange(list);            
+            _Context.SaveChanges();
         }
 
         public void Dispose()
         {
-            Dispose();
+            _Context.Dispose();
         }
 
         public TEntity Find(int Id)
@@ -49,18 +48,18 @@ namespace _3_Infra.Data.Repositories
         public void Remove(TEntity entity)
         {
             _DbSet.Remove(entity);
-            SaveChanges();
+            _Context.SaveChanges();
         }
 
         public void RemoveRange(IEnumerable<TEntity> list)
         {
             _DbSet.RemoveRange(list);
-            SaveChanges();
+            _Context.SaveChanges();
         }
 
         public int SaveChanges()
         {
-            return SaveChanges();
+            return _Context.SaveChanges();
         }
 
         public IList<TEntity> ToList()
@@ -72,13 +71,13 @@ namespace _3_Infra.Data.Repositories
         public void Update(TEntity entity)
         {
             _DbSet.Update(entity);
-            SaveChanges();
+            _Context.SaveChanges();
         }
 
         public void UpdateRange(IEnumerable<TEntity> list)
         {
             _DbSet.UpdateRange(list);
-            SaveChanges();
+            _Context.SaveChanges();
         }
 
         public IList<TEntity> Where(Expression<Func<TEntity, bool>> predicate)

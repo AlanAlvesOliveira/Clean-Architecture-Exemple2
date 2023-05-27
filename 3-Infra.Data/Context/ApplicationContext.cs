@@ -12,6 +12,7 @@ namespace _3_Infra.Data.Context
 
         public DbSet<TableExample> TableExample { get; set; }
 
+        
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             modelBuilder.ApplyConfiguration(new TableExample_Config());

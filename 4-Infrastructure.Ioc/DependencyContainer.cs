@@ -18,6 +18,7 @@ namespace _4_Infrastructure.Ioc
 
             //Repositories
             services.AddScoped<IQueryRepository<TableExample>, QueryRepository<TableExample, ApplicationContext>>();
+            services.AddScoped<ICommandRepository<TableExample>, CommandRepository<TableExample, ApplicationContext>>();
 
 
         }
