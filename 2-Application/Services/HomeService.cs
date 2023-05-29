@@ -20,6 +20,9 @@ namespace _2_Application.Services
 
         public HomeViewModels GetListaTableExample()
         {
+            
+            
+            
             var teste = _ProcTableExample.GetList(null);
             //_TableExampleCommand.Add(new TableExample() { Campo1 = "TesteTeste" });
             //var teste = _TableExampleCommand.Find(7);

@@ -8,7 +8,7 @@
     }
   },
   "profiles": {
-    "_5_Web": {
+    "Web": {
       "commandName": "Project",
       "dotnetRunMessages": true,
       "launchBrowser": true,
